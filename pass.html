@@ -4,6 +4,7 @@
      <title>Assignment-JS and DOM</title>
  </head>
 <body>
+   
 <h2>Pass phrase by - AKSHITHA BEKKARI</h2>
 <form>
     <label for="form1_phrase">Enter the secret phrase </label>
@@ -14,10 +15,9 @@
      <br/>
     <input type="button" onclick="processPhrase()" value="Check the phrase">
 </form>
-
-
 <p id="result">This text will be replaced </p>
-
+<div class = "container">
+    <img id = "img" onclick ="newImage()"src = "bearimage.jpg" alt = "Bear Image" width = "200px" height = "200px" ></div>
 <script> 
 let correct = 0, wrong = 0;
 function processPhrase(){
@@ -33,6 +33,24 @@ function processPhrase(){
         wrong = wrong + 1;
         out.innerHTML = "wrong count: "+wrong
         alert("Access denied");
+    }
+}
+let usingImage = 1;
+function newImage(){
+    switch(usingImage)
+    {
+        case 1: 
+        document.getElementById("img").src = "bearimage.jpg"
+        usingImage = usingImage + 1;
+        break;
+        case 2: 
+        document.getElementById("img").src = "elephantimage.jpg"
+        usingImage = usingImage + 1;
+        break;
+        case 3: 
+        document.getElementById("img").src = "kangarooimage.jpg"
+        usingImage = usingImage + 1;
+        break;   
     }
 }
 </script>
