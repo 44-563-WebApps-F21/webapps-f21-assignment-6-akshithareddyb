@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Cars</title>
+ </head>
+<body>
+
+<h2>Orders a car</h2>
+
+<form>
+    <input type="checkbox" id="check_1" name="check_1" value="electric" >
+    <label for="check_1">electric</label></br>
+      
+    <input type="checkbox" id="check_2" name="check_2" value="ac">
+    <label for="check_2">ac</label></br>
+      
+    <input type="checkbox" id="check_3" name="check_3" value="gps" >
+    <label for="check_3">gps</label></br> </br>
+
+    <input type="button" onclick="orderCar()" value="Order a Car">     
+</form>
+
+
+<p id="result">This text will be replaced </p>
+<form>
+    <label for="namep">Enter a property</label></br>
+    <input type="text" id="namep" name="namep" value="color" > </br>
+    
+    <label for="valuep">Enter a value</label></br>
+    <input type="text" id="valuep" name="valuep"> </br> </br>
+   
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form>
+<script> 
+let my_car = {}
+
+function orderCar() {
+    my_car = {}
+    console.log("Getting input")
+    electric = document.getElementById("check_1").checked
+    ac = document.getElementById("check_2").checked
+    gps = document.getElementById("check_3").checked
+    out = document.getElementById("result")
+   /* check1? my_car["check_1"] = true : my_car["check_1"] = false
+    check2? my_car["check_2"] = true : my_car["check_2"] = false
+    check3? my_car["check_3"] = true : my_car["check_3"] = false */
+    my_car.electric = electric
+    my_car.ac = ac
+    my_car.gps = gps
+    my_car = JSON.stringify(my_car)
+    out.innerHTML = my_car
+    my_car = JSON.parse(my_car)
+    
+}
+
+function updateCar()
+{
+    name_property = document.getElementById("namep").value
+    value_property = document.getElementById("valuep").value
+    out = document.getElementById("result")
+    my_car[name_property] = value_property
+    my_car = JSON.stringify(my_car)
+    out.innerHTML = my_car
+    my_car = JSON.parse(my_car)
+}
+</script>
+
+</body>
+</html> 
