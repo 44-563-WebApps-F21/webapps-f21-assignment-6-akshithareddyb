@@ -14,22 +14,57 @@
 
     <input type="button" onclick="powers()" value="Compute">
 </form>
-
-
 <p id="result">This text will be replaced </p>
-
+<form>
+<input type="radio" id="addition" name="operations" value="plus" onclick = "processRadio()">
+<label for="addition">+</label><br>
+<input type="radio" id="subtraction" name="operations" value="minus" onclick = "processRadio()">
+<label for="subtraction">-</label><br>
+<input type="radio" id="multiplication" name="operations" value="times" onclick = "processRadio()">
+<label for="multiplication">*</label><br>
+<input type="radio" id="division" name="operations" value="divide" onclick = "processRadio()">
+<label for="divison">/</label>
+</form>
+<p id="output">This text will be replaced </p>
 <script> 
-let result = ""
+
 function powers (){
+    let result = ""
     console.log("Getting form values")
     base = document.getElementById("baseelement").value
     exponent = document.getElementById("exponentelement").value
     out = document.getElementById("result")
     for(i = 1;i<=exponent;i++)
     {
-        result = result + Math.pow(base,i) + " "
+        result = result + Math.pow(base,i) + " ";
     }
     out.innerHTML = "Powers of " +base+ " are: " +result ;
+}
+function processRadio()
+{
+    let output;
+    console.log("Getting form values")
+    base = Number(document.getElementById("baseelement").value)
+    exponent = Number(document.getElementById("exponentelement").value)
+    plus = document.getElementById("addition").checked 
+    minus = document.getElementById("subtraction").checked
+    times = document.getElementById("multiplication").checked 
+    divide = document.getElementById("division").checked 
+    out = document.getElementById("output")
+    
+    if(plus){
+        output = "Sum of "+base+" and "+exponent+" is "+ (base + exponent)
+    }
+    else if(minus){
+        output = "Subtraction of "+base+" and "+exponent+" is "+ (base - exponent)
+    }
+   else if(times){
+        output = "Multiplication of "+base+" and "+exponent+" is "+ (base * exponent)
+    }
+    else if(divide){
+        output = "Division of "+base+" and "+exponent+" is "+ (base / exponent)
+    }
+    out.innerHTML = output; 
 }
 </script>
 
