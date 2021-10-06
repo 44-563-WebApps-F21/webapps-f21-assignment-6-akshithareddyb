@@ -3,6 +3,6 @@ Assignment introduction Java Script and DOM
 
 Hosted At: <https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-akshithareddyb/pass.html>
 
-Hosted At: <https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-akshithareddyb/arithmetic.html>\
+Hosted At: <https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-akshithareddyb/arithmetic.html>
 
 Hosted At: <https://44-563-webapps-f21.github.io/webapps-f21-assignment-6-akshithareddyb/car.html>
