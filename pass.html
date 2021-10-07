@@ -50,9 +50,9 @@ function processPhrase(){
     }
     else
     {
-        document.getElementById("bton").onclick = locked()
         wrong = wrong + 1;
         out.innerHTML = "wrong count: "+wrong
+        document.getElementById("bton").onclick = locked()
     }
    
 }
